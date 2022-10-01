@@ -18,22 +18,16 @@ public class TeamController {
     private TeamRepository teamRepository;
     private MatchRepository matchRepository;
 
-    TeamController(TeamRepository teamRepository, MatchRepository matchRepository){
+    TeamController(TeamRepository teamRepository, MatchRepository matchRepository) {
         this.teamRepository = teamRepository;
         this.matchRepository = matchRepository;
     }
 
-    @GetMapping("/team1")
-    public String sample(){
-        return "Team1";
-    }
     @GetMapping("/teams/{teamName}")
-    public Team getTeams(@PathVariable String teamName){
-        
-        System.out.println("In getTeams");
+    public Team getTeams(@PathVariable String teamName) {
+
         Optional<Team> Optionalteam = teamRepository.findByTeamName(teamName);
         Team team = Optionalteam.get();
-        System.out.println(2);
 
         try {
             team.setMatches(matchRepository.setMatches(teamName, teamName));
@@ -43,6 +37,6 @@ public class TeamController {
         System.out.println(team);
 
         return team;
-        
+
     }
 }
