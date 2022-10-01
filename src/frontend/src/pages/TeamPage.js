@@ -14,7 +14,7 @@ export const TeamPage = () => {
       setTeam(data);
     };
     fetchData();
-  }, []);
+  }, [teamName]);
 
   return team == null || team.teamName == null ? (
     <h1>No Team Found</h1>
