@@ -1,0 +1,20 @@
+.MatchDetailCard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem 2rem 2rem 2rem;
+
+    .additional-details{
+        padding-right: 10%;
+        text-align: right;
+        & > p {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.won-card{
+    background-color: rgb(75, 154, 75);
+}
+.lost-card{
+    background-color: rgb(194, 59, 59);
+}
