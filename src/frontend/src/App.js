@@ -1,11 +1,11 @@
 import "./App.scss";
 import { TeamPage } from "./pages/TeamPage.js";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import { MatchPage } from "./pages/MatchPage";
 import { HomePage } from "./pages/HomePage";
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/teams/:teamName" element={<TeamPage />}></Route>
@@ -14,7 +14,7 @@ function App() {
           element={<MatchPage />}
         ></Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
